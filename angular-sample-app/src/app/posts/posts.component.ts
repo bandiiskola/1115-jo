@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
 })
 export class PostsComponent implements OnInit{
   posts: any[] = [];
-  newPost = {title: '', body: ''};
+  newPost = {name: '', username: ''};
 
   constructor(private dataService: DataService){}
 
@@ -27,7 +27,7 @@ export class PostsComponent implements OnInit{
     this.dataService.addPost(this.newPost).subscribe(
       data =>{
         this.posts.push(data);
-        this.newPost = {title: '', body: ''};
+        this.newPost = {name: '', username: ''};
       },
       error => console.error('Hiba történt', error)
     )

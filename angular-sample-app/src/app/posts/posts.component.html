@@ -1,12 +1,12 @@
 <h2>Bejegyzések</h2>
 
-<div *ngFor="let post of posts">
-    <h3>{{post.title}}</h3>
-    <p>{{post.body}}</p>
+<div *ngFor="let user of posts">
+    <h3>{{user.name}}</h3>
+    <p>{{user.username}}</p>
     <hr>
 </div>
 
 <h3>Új bejegyzés hozzáadása</h3>
-<input type="text" [(ngModel)]="newPost.title" placeholder="Cím">
-<textarea [(ngModel)]="newPost.body" placeholder="Tartalom"></textarea>
+<input type="text" [(ngModel)]="newPost.name" placeholder="Név">
+<textarea [(ngModel)]="newPost.username" placeholder="Felhasználónév"></textarea>
 <button (click)="addPost()">bejegyzés hozzáadása</button>
