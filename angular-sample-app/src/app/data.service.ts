@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = "https://jsonplaceholder.typicode.com/users"
+  private apiUrl = "https://berenandor.moriczcloud.hu/users"
 
   constructor(private http: HttpClient) { }
 
@@ -15,6 +15,6 @@ export class DataService {
   }
 
   addPost(postData: any): Observable<any>{
-    return this.http.post(this.apiUrl, postData);
+    return this.http.get(this.apiUrl+"/feltolt/"+postData.name+"/"+postData.username);
   }
 }
